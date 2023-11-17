@@ -1,2 +1,20 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>Book detail</h1>
+<%= form_with model: @book do |f| %>
+<table>
+  <tbody>
+    <tr>
+      <td></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <% if @book.user == current_user %>
+      <td>
+        <%= link_to "Edit", edit_book_path, class: 'btn btn-default' %>
+      </td>
+      <td>
+        <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか?", class: 'btn btn-default2' %>
+      </td>
+      <% end %>
+    </tr>
+  </tbody>
+<table>
+<% end %>

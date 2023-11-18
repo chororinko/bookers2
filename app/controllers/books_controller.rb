@@ -16,8 +16,6 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    # 以下投稿したユーザーのトプ画載せたい
-
   end
 
   def show

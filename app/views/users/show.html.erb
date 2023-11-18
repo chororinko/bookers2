@@ -1,6 +1,5 @@
-<!--表示はできてる-->
-<div>
-  <h1>User info</h1>
+<h1>User info</h1>
+<%= form_with model: @user do |f| %>
   <%= image_tag @user.get_profile_image(100,100) %>
   <table>
     <tbody>
@@ -14,10 +13,10 @@
       </tr>
       <tr>
         <td><% if @user == current_user %>
-          <p><%= link_to 'edit', edit_user_path(@user) %></p>
+            <p><%= link_to 'edit', edit_user_path(@user) %></p>
             <% end %>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
+<% end %>

@@ -1,6 +1,7 @@
 <div class="notice">
   <%= flash[:notice] %>
 </div>
+
 <h1>User info</h1>
 <%= form_with model: @user do |f| %>
   <%= image_tag @user.get_profile_image(100,100) %>

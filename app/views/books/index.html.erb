@@ -1,3 +1,16 @@
+  <h4>
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %> errors prohibited this obj from being saved:
+  </h4>
+  <h5>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </h5>
+  <% end %>
+
 <h2>Books</h2>
 
 <table>
@@ -20,3 +33,5 @@
     <% end %>
   </tbody>
 </table>
+
+

@@ -1,14 +1,14 @@
-<div class="notice">
-  <%= flash[:notice] %>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/list', user: @user, book: @book %>
+    </div>
 
-<!--user/show-->
-<!--book/new-->
-<%= render 'users/list', user: @user, book: @book %>
+    <div class="col-md-8, offset-md-1">
+      <h2>Book detail</h2>
+      <%= form_with model: @book do |f| %>
 
-<h1>Book detail</h1>
-<%= form_with model: @book do |f| %>
-<table>
+<table class="table table">
   <tbody>
     <tr>
       <td>
@@ -33,3 +33,6 @@
   </tbody>
 </table>
 <% end %>
+</div>
+</div>
+</div>

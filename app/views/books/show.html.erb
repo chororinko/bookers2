@@ -2,6 +2,10 @@
   <%= flash[:notice] %>
 </div>
 
+<!--user/show-->
+<!--book/new-->
+<%= render 'users/list', user: @user, book: @book %>
+
 <h1>Book detail</h1>
 <%= form_with model: @book do |f| %>
 <table>

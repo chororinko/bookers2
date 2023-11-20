@@ -14,7 +14,7 @@
     <header>
       <table>
         <tr>
-    <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <td>
             <%= link_to "Bookers", root_path %>
           </td>
@@ -33,7 +33,7 @@
         </tr>
       </table>
 
-  <table>
+    <table>
     <tr>
     <% else %>
       <td>
@@ -53,15 +53,17 @@
       </td>
     <% end %>
     </tr>
-  </table>
+    </table>
 
-  </header>
+    </header>
 
-  <main></main>
+    <main>
+      <%= yield %>
+    </main>
 
     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>
-    <%= yield %>
+
   </body>
 </html>

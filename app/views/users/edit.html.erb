@@ -1,4 +1,7 @@
-<h1>User info</h1>
+<div class="container mt-3 mx-auto">
+  <div class="row">
+    <div class="mx-auto">
+      <h2>User info</h2>
 <%= form_with model: @user do |f| %>
 
   <% if @user.errors.any? %>
@@ -10,15 +13,20 @@
     </ul>
   <% end %>
 
-  <h4>Name</h4>
+
+  <h5>Name</h5>
   <%= f.text_field :name %>
 
-  <h4>Image</h4>
+
+  <h5>Image</h5>
   <%= f.file_field :profile_image, accept: "image/*" %>
 
-  <h4>Introduction</h4>
+  <h5>Introduction</h5>
   <%= f.text_area :introduction %>
 
-  <h4><%= f.submit 'Update user' %></h4>
+  <h5><%= f.submit 'Update user', class: 'btn btn-secondary'%></h5>
 
 <% end %>
+</div>
+</div>
+</div>

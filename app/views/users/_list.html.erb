@@ -19,9 +19,11 @@
     </tbody>
     </table>
       <div class="row">
-        <%= link_to edit_user_path(user), class: 'btn btn-light' do %>
-          <i class="fa-solid fa-user-gear"></i>
-        <% end %>
+        <button class="navbar-toggler">
+          <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary' do %>
+            <span class="fa-solid fa-user-gear"></span>
+          <% end %>
+        </button>
       </div>
 <% end %>
 <!--book/new-->

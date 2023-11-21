@@ -2,15 +2,29 @@
   <%= flash[:notice] %>
 </div>
 
-<div class="t-title">
-  <h1>welcome to Bookers!!</h1>
+<div class="container mt-3 mx-auto">
+  <div class="row">
+    <div class="mx-auto">
+  <h1>welcome to
+    <i class="fa-solid fa-book"></i>Bookers !!
+  </h1>
+
+  <p>in <i class="fa-solid fa-book"></i>Bookers,<br></p>
+
+  <p>you can share and exchange your opinions , impressions , and emotions<br></p>
+
+  <p>about various books!<br></p>
+
+
+  <div class="d-grid col-4 mx-auto">
+    <div class="row">
+      <%= link_to "Log in", user_session_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="row">
+      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-success' %>
+    </div>
+  </div>
 </div>
-<div class="sentence1">in bookers,<br>
 </div>
-<div class="sentence2">
-  you can share and exchange your opinions , impressions , and emotions<br>
-</div>
-<div class="sentence3">
-  about various books!<br>
 </div>
 

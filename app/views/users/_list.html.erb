@@ -16,13 +16,13 @@
         <td>introduction</td>
         <td><%= user.introduction %></td>
       </tr>
-      <tr>
-        <td>
-          <p><%= link_to 'edit', edit_user_path(user), class: 'btn btn-default'%></p>
-        </td>
-      </tr>
     </tbody>
-  </table>
+    </table>
+      <div class="row">
+        <%= link_to edit_user_path(user), class: 'btn btn-light' do %>
+          <i class="fa-solid fa-user-gear"></i>
+        <% end %>
+      </div>
 <% end %>
 <!--book/new-->
       <%= form_with model: book do |f| %>
@@ -34,7 +34,7 @@
         <h5>Opinion</h5>
         <%= f.text_area :body %>
 
-        <h5><%= f.submit 'Create book' %></h5>
+        <h5><%= f.submit 'Create book', class: 'btn btn-success' %></h5>
 
       <% end %>
 

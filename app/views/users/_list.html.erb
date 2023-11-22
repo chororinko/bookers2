@@ -15,25 +15,34 @@
     </tbody>
     </table>
 
-        <button class="navbar-toggler">
-          <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary' do %>
+    <div class="container fluid">
+      <div class="row">
+        <button class="navbar-toggler col">
+          <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary col' do %>
             <span class="fa-solid fa-user-gear"></span>
           <% end %>
         </button>
+      </div>
+    </div>
 
 
 <% end %>
 
       <%= form_with model: book do |f| %>
-        <h2>New book</h2>
 
+        <h2 class="mt-3">New book</h2>
+
+    <div class="row">
+      <div class="form-group col">
         <h6>Title</h6>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: 'col' %>
 
         <h6>Opinion</h6>
-        <%= f.text_area :body %>
+        <%= f.text_area :body, class: 'col' %>
 
         <h6><%= f.submit 'Create book', class: 'btn btn-success' %></h6>
+</div>
+</div>
 
       <% end %>
 

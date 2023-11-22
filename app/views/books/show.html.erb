@@ -2,13 +2,13 @@
   <%= flash[:notice] %>
 </div>
 
-<div class="container">
+<div class="container fluid mt-3 px-5">
   <div class="row">
     <div class="col-md-3">
       <%= render 'users/list', user: @user, book: @book %>
     </div>
 
-    <div class="col-md-8, offset-md-1">
+    <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <%= form_with model: @book do |f| %>
 

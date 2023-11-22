@@ -19,10 +19,18 @@
 
   <div class="btn-wrapper col-10 mx-auto">
     <div class="row mb-3">
-      <%= link_to "Log in", user_session_path, class: 'btn btn-info col'%>
+      <% if user_signed_in? %>
+        <%= link_to "Log in", user_path(current_user.id), class: 'btn btn-info col'%>
+      <% else %>
+        <%= link_to "Log in", user_session_path, class: 'btn btn-info col'%>
+      <% end %>
     </div>
     <div class="row mb-3">
-      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-success col' %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign up", user_path(current_user.id), class: 'btn btn-success col'%>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-success col' %>
+      <% end %>
     </div>
   </div>
 </div>

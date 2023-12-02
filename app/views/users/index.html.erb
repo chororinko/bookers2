@@ -24,9 +24,9 @@
       <td><%= user.name %></td>
       <td>フォロー数：<%= user.follower_user.count %></td>
       <td>フォロワー数：<%= user.followed_user.count %></td>
-      <% if current_user.user.follower_user %>
+      <% if current_user.follower_user %>
         <td>
-          <%= link_to 'フォロー外す', user_relationship_path(user), method: :delete do %>
+          <%= link_to 'フォロー外す', user_relationship_path(), method: :delete do %>
           <% end %>
         </td>
       <% else %>

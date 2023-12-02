@@ -12,9 +12,18 @@
         <td>introduction</td>
         <td><%= user.introduction %></td>
       </tr>
+      <tr>
+        <td>follows</td>
+        <td><%= user.follower_user.count %></td>
+      </tr>
+      <tr>
+        <td>followers</td>
+        <td><%= user.followed_user.count %></td>
+      </tr>
     </tbody>
     </table>
 
+    <% if user == current_user %>
     <div class="container fluid">
       <div class="row">
         <button class="navbar-toggler col">
@@ -24,8 +33,18 @@
         </button>
       </div>
     </div>
-
-
+    <% end %>
+    <% if user != current_user %>
+      <% if current_user == follower_user.user %>
+      <div>
+        <%= f.submit 'フォロー外す', class: 'btn btn-info' %>
+      </div>
+      <% else %>
+      <div>
+        <%= f.submit 'フォローする', class: 'btn btn-success' %>
+      </div>
+      <% end %>
+    <% end %>
 <% end %>
 
     <%= form_with model: Book.new do |f| %>

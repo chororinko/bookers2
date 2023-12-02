@@ -24,7 +24,7 @@
 
             <% if @book.favorited_by?(current_user) %>
             <td>
-              <%= link_to book_favorites_path(@book), method: :delete do %>
+              <%= link_to book_favorites_path(@book), method: :delete, style: 'color: red;' do %>
                 ♥<%= @book.favorites.count %>
               <% end %>
             </td>
@@ -70,11 +70,9 @@
       <% end %>
 
       <%= form_with model: [@book, @book_comment], authenticity_token: true do |f| %>
-        <div><%= f.text_area :comment %></div>
-        <!--<div><%= hidden_field_tag :authenticity_token, form_authenticity_token %></div>-->
+        <div><%= f.text_area :comment, rows:'5', placeholder: 'コメントをここに', class: "w-100" %></div>
         <div><%= f.submit '送信' %></div>
       <% end %>
-
     </div>
   </div>
 </div>

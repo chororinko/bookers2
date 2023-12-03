@@ -14,11 +14,11 @@
       </tr>
       <tr>
         <td>follows</td>
-        <td><%= user.follower_user.count %></td>
+        <td><%= user.followings.count %></td>
       </tr>
       <tr>
         <td>followers</td>
-        <td><%= user.followed_user.count %></td>
+        <td><%= user.followeds.count %></td>
       </tr>
     </tbody>
     </table>
@@ -34,8 +34,9 @@
       </div>
     </div>
     <% end %>
+
     <% if user != current_user %>
-      <% if current_user == follower_user.user %>
+      <% if current_user.following?(user) %>
       <div>
         <%= f.submit 'フォロー外す', class: 'btn btn-info' %>
       </div>

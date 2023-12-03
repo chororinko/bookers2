@@ -1,17 +1,22 @@
 class RelationshipsController < ApplicationController
 
   def create
-    user = User.find(params[:user_id])
-    relationship = current_user.relationships.new(user_id: user.id)
-    relationship.save
+    current_user.follow(params[:user_id])
     redirect_to request.referer
   end
 
   def destroy
-    user = User.find(params[:user_id])
-    relationship = current_user.relationships.find_by(user_id: user.id)
-    relationship.destroy
+    current_user.unfollow(params[:user_id])
     redirect_to request.referer
   end
 
+  def followings
+    @user = User.find(params[:user_id])
+    @users = user.followings
+  end
+
+  def followeds
+    @user = User.find(params[:user_id])
+    @users = user.followeds
+  end
 end

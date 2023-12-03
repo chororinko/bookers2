@@ -1,4 +1,5 @@
-<% users.each do |user| %>
+<% if users.exists? %>
+  <% users.each do |user| %>
     <tr>
       <td><%= link_to(user_path(user)) do %>
         <%= image_tag(user.get_profile_image(100,100)) %>
@@ -9,4 +10,7 @@
       <td>フォロワー数：<%= user.followers.count %></td>
       <td><%= link_to 'Show', user_path(user.id) %></td>
     </tr>
+  <% end %>
+<% else %>
+  <p>ユーザーはいません</p>
 <% end %>

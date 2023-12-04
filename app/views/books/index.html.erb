@@ -1,3 +1,7 @@
+<div class="row justify-content-center">
+  <%= render 'searches/search' %>
+</div>
+
 <div class="container fluid mt-3 px-5">
   <div class="notice">
     <h3>
@@ -33,7 +37,7 @@
           <tr>
             <td>
               <%= link_to(user_path(book.user)) do %>
-                <%= image_tag(book.user.get_profile_image(100,100)) %>
+                <%= image_tag(book.user.get_profile_image(50,50)) %>
               <% end %>
             </td>
             <td>

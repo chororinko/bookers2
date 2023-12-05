@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= form_with url: search_path, local: true, method: :get do |f| %>
 <table>
   <tr>
@@ -8,5 +9,5 @@
   </tr>
 </table>
 <% end %>
-
+<% end %>
 

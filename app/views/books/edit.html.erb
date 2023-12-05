@@ -1,40 +1,32 @@
+<div class="row justify-content-center">
+  <%= render 'searches/search' %>
+</div>
+
 <div class="container fluid mt-3 mx-auto">
   <div class="row">
     <div class="col-md-5 mx-auto">
       <div class="form-title mb-3">
         <h1>Editing Book</h1>
       </div>
-<%= form_with model: @book do |f| %>
+      <%= form_with model: @book do |f| %> 
+        <%= render 'layouts/errors', obj: @book %>
 
-<h2>
-<% if @book.errors.any? %>
-    <%= @book.errors.count %> errors prohibited this obj from being saved:
-</h2>
-<h6>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-</h6>
+        <h6>Title</h6>
+        <%= f.text_field :title, class: 'col mb-3' %>
 
-  <h6>Title</h6>
-  <%= f.text_field :title, class: 'col mb-3' %>
+        <h6>Opinion</h6>
+        <%= f.text_area :body, class: 'col mb-3' %>
 
-  <h6>Opinion</h6>
-  <%= f.text_area :body, class: 'col mb-3' %>
+        <h6><%= f.submit 'Update Book', class: 'btn btn-success mb-3' %></h6>
 
-  <h6><%= f.submit 'Update Book', class: 'btn btn-success mb-3' %></h6>
-
-    <table>
-      <tr>
-        <td><%= link_to "Show", book_path(@book) %></td>
-        <td><div class="border">|</div><td>
-        <td><%= link_to "Back", books_path %></td>
-      </tr>
-    </table>
-<% end %>
-</div>
-</div>
+        <table>
+          <tr>
+            <td><%= link_to "Show", book_path(@book) %></td>
+            <td>|<td>
+            <td><%= link_to "Back", books_path %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
 </div>

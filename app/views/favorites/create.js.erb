@@ -1,1 +1,3 @@
-$('.favorite-btn').html('<%= j(render 'favorites/favorite-btn', book: @book, book: book) %>')
+console.log("create.js is executed.");
+$(".favorite-btn_<%= @book.id %>").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
+console.log("HTML is updated.");

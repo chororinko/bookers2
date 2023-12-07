@@ -43,12 +43,11 @@
           </tr>
         </tbody>
       </table>
-
-      <div><%= link_to @book.user.name, user_path(@book.user) %></div>
+        <p><%= link_to @book.user.name, user_path(@book.user) %></p>
       <% end %>
 
       <% @book.book_comments.each do |comment| %>
-      <div id="comment-index_<%= @book.id %>">
+      <div id="comment-index_<%= comment.id %>">
         <%= render 'book_comments/comment-index', comment: comment %>
       </div>
       <% end %>

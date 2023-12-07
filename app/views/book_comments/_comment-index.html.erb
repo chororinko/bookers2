@@ -1,4 +1,3 @@
-
   <table>
     <tr>
       <td><%= image_tag(comment.user.get_profile_image(50,50)) %></td>
@@ -9,7 +8,10 @@
         <% end %>
       </td>
     </tr>
+    <tr>
+      <td><%= link_to comment.user.name, user_path(comment.user) %></td>
+    </tr>
   </table>
-  <div><%= link_to comment.user.name, user_path(comment.user) %></div>
+
 
 

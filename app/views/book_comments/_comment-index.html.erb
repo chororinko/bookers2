@@ -1,3 +1,4 @@
+<% book.book_comments.each do |comment| %>  
   <table>
     <tr>
       <td><%= image_tag(comment.user.get_profile_image(50,50)) %></td>
@@ -12,6 +13,7 @@
       <td><%= link_to comment.user.name, user_path(comment.user) %></td>
     </tr>
   </table>
+<% end %>
 
 
 

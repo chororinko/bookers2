@@ -46,16 +46,14 @@
         <p><%= link_to @book.user.name, user_path(@book.user) %></p>
       <% end %>
 
-      <% @book.book_comments.each do |comment| %>
-      <div id="comment-index_<%= comment.id %>">
-        <%= render 'book_comments/comment-index', comment: comment %>
-      </div>
-      <% end %>
 
-      <%= form_with model: [@book, @book_comment], local: false do |f| %>
-        <div><%= f.text_area :comment, rows:'5', placeholder: 'コメントをここに', class: "w-100" %></div>
-        <div><%= f.submit '送信' %></div>
-      <% end %>
+      <div id="comment-index_<%= @book.id %>">
+        <%= render 'book_comments/comment-index', book: @book %>
+      </div>
+
+      <div class="form">
+        <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
+      </div>
     </div>
   </div>
 </div>

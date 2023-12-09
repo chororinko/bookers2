@@ -20,7 +20,8 @@
           <tr>
             <td>
               <%= link_to user_path(@book.user) do %>
-                <%= image_tag(@book.user.get_profile_image(50,50)) %>
+                <%= image_tag(@book.user.get_profile_image(50,50)) %><br>
+                <%= link_to @book.user.name, user_path(@book.user) %>
               <% end %>
             </td>
             <td><%= link_to @book.title, book_path(@book) %></td>
@@ -43,7 +44,6 @@
           </tr>
         </tbody>
       </table>
-        <p><%= link_to @book.user.name, user_path(@book.user) %></p>
       <% end %>
 
       <div class="comment-index">

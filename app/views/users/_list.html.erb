@@ -35,17 +35,9 @@
     </div>
     <% end %>
 
-    <% if user != current_user %>
-      <% if current_user.following?(user) %>
-      <div>
-        <%= link_to 'フォロー外す', user_relationships_path(user), method: :delete, class: 'btn btn-info' %>
-      </div>
-      <% else %>
-      <div>
-        <%= link_to 'フォローする', user_relationships_path(user), method: :post, class: 'btn btn-success' %>
-      </div>
-      <% end %>
-    <% end %>
+    <div id="follow-btn_<%= user.id %>">
+      <%= render 'relationships/follow-btn', user: user %>
+    </div>
 <% end %>
 
     <%= form_with model: Book.new do |f| %>
